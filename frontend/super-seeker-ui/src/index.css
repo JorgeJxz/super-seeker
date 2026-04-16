@@ -1,13 +1,48 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a2e;
+  min-height: 100vh;
+}
+
+@layer components {
+  .metro-tile {
+    @apply relative overflow-hidden rounded-lg transition-all duration-300;
+    @apply hover:scale-105 hover:shadow-2xl cursor-pointer;
+  }
+  
+  .metro-tile-blue {
+    @apply bg-metro-blue text-white;
+  }
+  
+  .metro-tile-green {
+    @apply bg-metro-green text-white;
+  }
+  
+  .metro-tile-orange {
+    @apply bg-metro-orange text-white;
+  }
+  
+  .metro-tile-purple {
+    @apply bg-metro-purple text-white;
+  }
+  
+  .metro-tile-red {
+    @apply bg-metro-red text-white;
+  }
+  
+  .metro-tile-teal {
+    @apply bg-metro-teal text-white;
+  }
 }

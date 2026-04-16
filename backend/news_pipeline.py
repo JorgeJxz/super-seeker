@@ -21,6 +21,11 @@ stop_words = set(stopwords.words("english")).union(custom_stopwords)
 lemmatizer = WordNetLemmatizer()
 sia = SentimentIntensityAnalyzer()
 
+def classify_sentiment(score):
+    if score >= 0.05: return "positive"
+    elif score <= -0.05: return "negative"
+    else: return "neutral"
+
 # Función para limpiar el texto
 def clean_text(text):
     text = text.lower()
@@ -79,10 +84,6 @@ def process_news(df_raw):
 
    # Sentimiento
     df_raw["sentiment"] = df_raw["clean_text"].apply(lambda x: sia.polarity_scores(x)["compound"])
-    def classify_sentiment(score):
-        if score >= 0.05: return "positive"
-        elif score <= -0.05: return "negative"
-        else: return "neutral"
     df_raw["sentiment_label"] = df_raw["sentiment"].apply(classify_sentiment)
 
     return df_raw, word_freq, bigram_freq, df_raw["sentiment_label"].value_counts()
