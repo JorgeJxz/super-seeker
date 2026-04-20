@@ -290,7 +290,7 @@ Este proyecto está bajo la licencia MIT.
 
 ## 👨‍💻 Autor
 
-Desarrollado por [Tu Nombre/Equipo]
+Desarrollado por Jorge Gonzalez
 
 ## 📞 Contacto y Soporte
 
